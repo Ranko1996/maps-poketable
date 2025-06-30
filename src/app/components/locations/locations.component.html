@@ -1,0 +1,19 @@
+<div class="locations-container">
+  <h2>Popular Locations in Zagreb</h2>
+  <table class="locations-table">
+    <thead>
+      <tr>
+        <th>Location Name</th>
+        <th>E (Longitude)</th>
+        <th>N (Latitude)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of locations" (click)="selectLocation(location)">
+        <td>{{ location.name }}</td>
+        <td>{{ location.E | number:'1.4-4' }}</td>
+        <td>{{ location.N | number:'1.4-4' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+<div class="dashboard-container">
+  <h1>Zagreb Locations & Data Dashboard</h1>
+
+  <div class="top-row-panels">
+    <div class="locations-panel">
+      <app-locations (locationSelected)="onLocationSelected($event)"></app-locations>
+    </div>
+    <div class="map-panel">
+      <app-map [centerCoordinates]="selectedCoordinates"></app-map>
+    </div>
+  </div>
+
+  <div class="bottom-row-panel">
+    <app-chart></app-chart>
+  </div>
+</div>

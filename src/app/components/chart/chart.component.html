@@ -1,0 +1,37 @@
+<div class="chart-content-wrapper">
+  <h2>Hourly Average Data Overview</h2>
+
+  <div class="chart-flex-container">
+    <div class="chart-panel-content">
+      <div class="chart-area">
+        <canvas #myChart></canvas>
+      </div>
+    </div>
+
+    <div class="table-panel-content">
+      <h3>Hourly Data Table</h3>
+      <div class="table-scroll-container"> <table class="data-table">
+          <thead>
+            <tr>
+              <th>Time (Hourly)</th>
+              <th>Average Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngIf="hourlyData.length > 0; else noData">
+              <tr *ngFor="let item of hourlyData">
+                <td>{{ item.time }}</td>
+                <td>{{ item.averageValue | number:'1.2-2' }}</td>
+              </tr>
+            </ng-container>
+            <ng-template #noData>
+              <tr>
+                <td colspan="2" class="no-data">No data available or still loading...</td>
+              </tr>
+            </ng-template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
